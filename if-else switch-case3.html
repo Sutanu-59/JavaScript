@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="basic1.css">
+    <script>
+        function calp1() {
+            var n = document.getElementById('namep1').value;
+            var em = document.getElementById('engp1').value;
+            var cm = document.getElementById('comp1').value;
+            var mm = document.getElementById('mathp1').value;
+            var t, per, g;
+            t = parseFloat(em) + parseFloat(cm) + parseFloat(mm);
+            per = t / 3;
+
+            if (per < 50) {
+                g = 'D';
+            }
+            else if (per >= 50 && per < 60) {
+                g = 'C';
+            }
+            else if (per >= 60 && per < 80) {
+                g = 'B';
+            }
+            else {
+                g = 'A';
+            }
+
+            document.getElementById('outp1').value = "NAME\t\tENG\tCOMP\tMATH\tTOTAL\tGRADE\n" + n + "\t\t" + em + "\t" + cm + "\t" + mm + "\t" + t + "\t" + g;
+        }
+        function resetp1() {
+            document.getElementById('namep1').value = "";
+            document.getElementById('engp1').value = "";
+            document.getElementById('comp1').value = "";
+            document.getElementById('mathp1').value = "";
+            document.getElementById('outp1').value = "";
+        }
+        function calp2() {
+            var a = document.getElementById('n1p2').value;
+            var b = document.getElementById('n2p2').value;
+            var ch = document.getElementById('chp2').value;
+            if (ch != '+' && ch != '-' && ch != '*' && ch != '/' && ch != '%') {
+                document.getElementById('outp2').value = "Wrong Input";
+            }
+            else {
+                switch (ch) {
+                    case '+': document.getElementById('outp2').value = a + " + " + b + " = " + (a + b); break;
+                    case '-': document.getElementById('outp2').value = a + " - " + b + " = " + (a - b); break;
+                    case '*': document.getElementById('outp2').value = a + " * " + b + " = " + (a * b); break;
+                    case '/': document.getElementById('outp2').value = a + " / " + b + " = " + (a / b); break;
+                    case '%': document.getElementById('outp2').value = a + " % " + b + " = " + (a % b); break;
+                    default: document.getElementById('outp2').value = "Wrong Input";
+                }
+            }
+        }
+        function resetp2() {
+            document.getElementById('n1p2').value = "";
+            document.getElementById('n2p2').value = "";
+            document.getElementById('outp2').value = "";
+            document.getElementById('chp2').value = "";
+        }
+        function checkp3() {
+            var a = document.getElementById('nump3').value;
+            switch (a) {
+                case '1': document.getElementById('outp3').value = "Sunday"; break;
+                case '2': document.getElementById('outp3').value = "Monday"; break;
+                case '3': document.getElementById('outp3').value = "Tuesday"; break;
+                case '4': document.getElementById('outp3').value = "Wednessday"; break;
+                case '5': document.getElementById('outp3').value = "Thursday"; break;
+                case '6': document.getElementById('outp3').value = "Friday"; break;
+                case '7': document.getElementById('outp3').value = "Saturday"; break;
+                default: document.getElementById('outp3').value = "Wrong Input";
+            }
+        }
+        function resetp3() {
+            document.getElementById('nump3').value = "";
+            document.getElementById('outp3').value = "";
+        }
+        function submit(){
+            window.location = "index.html";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="wrapper pre">
+
+    </div>
+    <div class="wrapper">
+        <div class="title">
+            If-else Switch-case Part 3
+            <div class="line"></div>
+        </div>
+        <div class="container">
+            <div class="card tabs">
+                <input id="tab-1" type="radio" class="tab tab-selector" checked="checked" name="tab" />
+                <label for="tab-1" class="tab tab-primary">Grade</label>
+                <input id="tab-2" type="radio" class="tab tab-selector" name="tab" />
+                <label for="tab-2" class="tab tab-success">Calculator</label>
+                <input id="tab-3" type="radio" class="tab tab-selector" name="tab" />
+                <label for="tab-3" class="tab tab-default">Day</label>
+
+                <div class="tabsShadow"></div>
+                <div class="glider"></div>
+                <section class="content">
+                    <!-- tab1 -->
+                    <div class="item" id="content-1">
+                        <h2 class="tab-title tab-primary">Grade</h2>
+                        <p style="width:80%">
+                            <span class="numit">1</span> WAP to accept marks of any subject & find their grade from the
+                            given condition:
+
+                            Marks
+
+                            grade
+
+                            A
+
+                            B
+
+                            C
+
+                            D
+
+                            F
+
+                            >=90 >=80 and < 90>=60 and < 80>=40 and < 60 </p>
+                                        <div class="login-box" style="margin-top: 350px;margin-left: 250px;">
+                                            <h2>Grade</h2>
+                                            <form>
+                                                <div class="user-box">
+                                                    <input type="text" name="" required="" id="namep1">
+                                                    <label style="width:350px;box-shadow: none;">Enter Name of
+                                                        Student::--</label>
+                                                </div>
+                                                <div class="user-box">
+                                                    <input type="number" name="" required="" id="engp1">
+                                                    <label style="width:350px;box-shadow: none;">Enter Marks of
+                                                        English::--</label>
+                                                </div>
+                                                <div class="user-box">
+                                                    <input type="number" name="" required="" id="comp1">
+                                                    <label style="width:350px;box-shadow: none;">Enter Marks of
+                                                        Computer::--</label>
+                                                </div>
+                                                <div class="user-box">
+                                                    <input type="number" name="" required="" id="mathp1">
+                                                    <label style="width:350px;box-shadow: none;">Enter Marks of
+                                                        Math::--</label>
+                                                </div>
+                                                <a>
+                                                    <span></span>
+                                                    <span></span>
+                                                    <span></span>
+                                                    <span></span>
+                                                    <input type="button" id="butr" value="SUBMIT" onclick="calp1()"
+                                                        style="font-size: 20px; background: none; border: none; color: red; font-weight: bold;">
+
+                                                </a>
+                                                <a>
+                                                    <span></span>
+                                                    <span></span>
+                                                    <span></span>
+                                                    <span></span>
+                                                    <input type="button" id="butr" value="RESET" onclick="resetp1()"
+                                                        style="font-size: 20px; background: none; border: none; color: red; font-weight: bold;">
+                                                </a>
+                                                <div class="user-box">
+                                                    <textarea rows="3" cols="43" id="outp1" readonly
+                                                        style="background-color: black;color: aliceblue;"></textarea>
+                                                </div>
+                                            </form>
+                                            <!-- modal 1 -->
+                                            <button class="primary" onclick="window.dialog1.showModal();">Click For
+                                                Solution</button>
+                                            <dialog id="dialog1">
+                                                <img src="./grade ifsw3 ss.png" alt="" height="600px" width="1000px">
+                                                <button onclick="window.dialog1.close();" aria-label="close"
+                                                    class="x">❌</button>
+                                            </dialog>
+                                            <input type="button" Value="Click For Home" id="buttonh" onclick="submit()">
+                                        </div>
+                    </div>
+                    <!-- tab 2 -->
+                    <div class="item" id="content-2">
+                        <h2 class="tab-title tab-success">Calculator</h2>
+                        <p stye="width:80%">
+                            <span class="numit">2</span>WAP to make a calculator using if else or switch case statement.
+
+                        </p>
+                        <div class="login-box" style="margin-top: 350px;margin-left: 250px;">
+                            <h2>Calculator</h2>
+                            <form>
+                                <div class="user-box">
+                                    <input type="number" name="" required="" id="n1p2">
+                                    <label style="width:350px;box-shadow: none;">Enter First Number::-</label>
+                                </div>
+                                <div class="user-box">
+                                    <input type="number" name="" required="" id="n2p2">
+                                    <label style="width:350px;box-shadow: none;">Enter Second Number::-</label>
+                                </div>
+                                <div class="user-box">
+                                    <input type="text" name="" required="" id="chp2">
+                                    <label style="width:350px;box-shadow: none;">Enter Your Choice(+,-,*,/ or
+                                        %)::--</label>
+                                </div>
+
+                                <a>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <input type="button" id="butr" value="SUBMIT" onclick="calp2()"
+                                        style="font-size: 20px; background: none; border: none; color: red; font-weight: bold;">
+
+                                </a>
+                                <a>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <input type="button" id="butr" value="RESET" onclick="resetp2()"
+                                        style="font-size: 20px; background: none; border: none; color: red; font-weight: bold;">
+                                </a>
+                                <div class="user-box">
+                                    <input type="text" id="outp2" readonly>
+                                </div>
+                            </form>
+                            <!-- modal 2 -->
+                            <button class="primary" onclick="window.dialog2.showModal();">Click For Solution</button>
+                            <dialog id="dialog2">
+                                <img src="./cal ifsw3 ss.png" alt="" height="400px" width="700px">
+                                <button onclick="window.dialog2.close();" aria-label="close" class="x">❌</button>
+                            </dialog>
+                            <input type="button" Value="Click For Home" id="buttonh" onclick="submit()">
+                        </div>
+                    </div>
+                    <!-- tab 3 -->
+                    <div class="item" id="content-3">
+                        <h2 class="tab-title tab-default">Day</h2>
+                        <p stye="width:80%">
+                            <span class="numit">3</span> WAP to accept a day number from the user and print the
+                            corresponding day name.
+                        </p>
+                        <div class="login-box" style="margin-top: 350px;margin-left: 250px;">
+                            <h2>Day</h2>
+                            <form>
+                                <div class="user-box">
+                                    <input type="number" name="" required="" id="nump3">
+                                    <label style="width:350px;box-shadow: none;">Enter Day Number between 1 to 7
+                                        ::-</label>
+                                </div>
+                                <a>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <input type="button" id="butr" value="SUBMIT" onclick="checkp3()"
+                                        style="font-size: 20px; background: none; border: none; color: red; font-weight: bold;">
+                                </a>
+                                <a>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <input type="button" id="butr" value="RESET" onclick="resetp3()"
+                                        style="font-size: 20px; background: none; border: none; color: red; font-weight: bold;">
+                                </a>
+                                <div class="user-box">
+                                    <input type="text" id="outp3" readonly>
+                                </div>
+                            </form>
+                            <!-- modal 3 -->
+                            <button class="primary" onclick="window.dialog3.showModal();">Click For Solution</button>
+                            <dialog id="dialog3">
+                                <img src="./day ifsw3 ss.png" alt="" height="400px" width="700px">
+                                <button onclick="window.dialog3.close();" aria-label="close" class="x">❌</button>
+                            </dialog>
+                            <input type="button" Value="Click For Home" id="buttonh" onclick="submit()">
+                        </div>
+                    </div>
+
+
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="basic1.css">
+    <script>
+        function checkp1()
+        {
+            var n=document.getElementById('nump1').value;
+            if(n%7==0 || n%10==7)
+            {
+                document.getElementById('outp1').value="The number is Buzz Number";
+            }
+            else{
+                document.getElementById('outp1').value="The number is not Buzz Number";
+            }
+        }
+        function resetp1()
+        {
+            document.getElementById('nump1').value="";
+            document.getElementById('outp1').value="";
+        }
+        function checkp2() {
+            var b = document.getElementById('nump2').value;
+            if (b > 20000) {
+                document.getElementById('outp2').value="HRA is "+(b * 20 / 100)+" & DA is "+(b * 15 / 100);
+            }
+            else {
+                document.getElementById('outp2').value="HRA is "+(b * 30 / 100)+" & DA is "+(b * 25 / 100);
+            }
+        }
+        function resetp2() {
+            document.getElementById('nump2').value = "";
+            document.getElementById('outp2').value = "";
+        }
+        function checkp3() {
+            var a1, a2, a3;
+            a1 = document.getElementById('n1p3').value;
+            a2 = document.getElementById('n2p3').value;
+            a3 = document.getElementById('n3p3').value;
+            if (a1 == a2 && a2 == a3) {
+                document.getElementById('outp3').value = "Equilateral";
+            }
+            else if (a1 == a2 || a2 == a3 || a3 == a1) {
+                document.getElementById('outp3').value = "Scalene";
+            }
+            else {
+                document.getElementById('outp3').value = "Isoscelese";
+            }
+        }
+        function resetp3() {
+            document.getElementById('n1p3').value = "";
+            document.getElementById('n2p3').value = "";
+            document.getElementById('n3p3').value = "";
+            document.getElementById('outp3').value = "";
+        }
+        function checkp4() {
+            var cp = document.getElementById('n1p4').value;
+            var sp = document.getElementById('n2p4').value;
+            if (sp > cp) {
+                document.getElementById('outp4').value="Here is profit of Rs." + (sp - cp);
+            }
+            else if (sp < cp) {
+                document.getElementById('outp4').value="Here is loss of Rs." + (cp - sp);
+            }
+            else {
+                document.getElementById('outp4').value="No profit,no loss";
+            }
+        }
+        function resetp4() {
+            document.getElementById('n1p4').value = "";
+            document.getElementById('n2p4').value = "";
+            document.getElementById('outp4').value = "";
+        }
+        function submit(){
+            window.location = "index.html";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="wrapper pre">
+
+    </div>
+    <div class="wrapper">
+        <div class="title">
+            If-else Switch-case Part 2
+            <div class="line"></div>
+        </div>
+        <div class="container">
+            <div class="card tabs">
+                <input id="tab-1" type="radio" class="tab tab-selector" checked="checked" name="tab" />
+                <label for="tab-1" class="tab tab-primary">Buzz</label>
+                <input id="tab-2" type="radio" class="tab tab-selector" name="tab" />
+                <label for="tab-2" class="tab tab-success">Salary</label>
+                <input id="tab-3" type="radio" class="tab tab-selector" name="tab" />
+                <label for="tab-3" class="tab tab-default">Triangle</label>
+                <input id="tab-4" type="radio" class="tab tab-selector" name="tab" />
+                <label for="tab-4" class="tab tab-warning">Profit & Loss</label>
+                <div class="tabsShadow"></div>
+                <div class="glider"></div>
+                <section class="content">
+                    <!-- tab1 -->
+                    <div class="item" id="content-1">
+                        <h2 class="tab-title tab-primary">Buzz Number</h2>
+                        <p stye="width:80%">
+                            <span class="numit">1</span> WAP to accept any number and check the number is BUZZ or not.
+                        </p>
+                        <div class="login-box" style="margin-top: 300px;margin-left: 250px;">
+                            <h2>Buzz Number</h2>
+                            <form>
+                                <div class="user-box">
+                                    <input type="number" name="" required="" id="nump1">
+                                    <label style="width:350px;box-shadow: none;">Enter a Number::-</label>
+                                </div>
+                                <a>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <input type="button" id="butr" value="SUBMIT" onclick="checkp1()"
+                                        style="font-size: 20px; background: none; border: none; color: red; font-weight: bold;">
+
+                                </a>
+                                <a>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <input type="button" id="butr" value="RESET" onclick="resetp1()"
+                                        style="font-size: 20px; background: none; border: none; color: red; font-weight: bold;">
+                                </a>
+                                <div class="user-box">
+                                    <input type="text" id="outp1" readonly>
+                                </div>
+                            </form>
+                            <!-- modal 1 -->
+                            <button class="primary" onclick="window.dialog1.showModal();">Click For Solution</button>
+                            <dialog id="dialog1">
+                                <img src="./buzz ifsw2 ss.png" alt="" height="400px" width="700px">
+                                <button onclick="window.dialog1.close();" aria-label="close" class="x">❌</button>
+                            </dialog>
+                            <input type="button" Value="Click For Home" id="buttonh" onclick="submit()">
+                        </div>
+                    </div>
+                    <!-- tab 2 -->
+                    <div class="item" id="content-2">
+                        <h2 class="tab-title tab-success">Salary</h2>
+                        <p style="width:80%">
+                            <span class="numit">2</span>WAP to accept any number and check the number is odd or even.
+
+                        </p>
+                        <div class="login-box" style="margin-top: 250px;margin-left: 250px;">
+                            <h2>Salary</h2>
+                            <form>
+                                <div class="user-box">
+                                    <input type="number" name="" required="" id="nump2">
+                                    <label style="width:350px;box-shadow: none;">Enter Salary::-</label>
+                                </div>
+                                
+                                <a>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <input type="button" id="butr" value="SUBMIT" onclick="checkp2()"
+                                        style="font-size: 20px; background: none; border: none; color: red; font-weight: bold;">
+
+                                </a>
+                                <a>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <input type="button" id="butr" value="RESET" onclick="resetp2()"
+                                        style="font-size: 20px; background: none; border: none; color: red; font-weight: bold;">
+                                </a>
+                                <div class="user-box">
+                                    <input type="text" id="outp2" readonly>
+                                </div>
+                            </form>
+                            <!-- modal 2 -->
+                            <button class="primary" onclick="window.dialog2.showModal();">Click For Solution</button>
+                            <dialog id="dialog2">
+                                <img src="./salary ifsw2 ss.png" alt="" height="400px" width="900px">
+                                <button onclick="window.dialog2.close();" aria-label="close" class="x">❌</button>
+                            </dialog>
+                            <input type="button" Value="Click For Home" id="buttonh" onclick="submit()">
+                        </div>
+                    </div>
+                    <!-- tab 3 -->
+                    <div class="item" id="content-3">
+                        <h2 class="tab-title tab-default">Triangle</h2>
+                        <p stye="width:80%">
+                            <span class="numit">3</span> WAP to accept three angle of a triangle and check the triangle is isosceles, equilateral, scalene.
+                        </p>
+                        <div class="login-box" style="margin-top: 350px;margin-left: 250px;">
+                            <h2>Triangle</h2>
+                            <form>
+                                <div class="user-box">
+                                    <input type="number" name="" required="" id="n1p3">
+                                    <label style="width:350px;box-shadow: none;">Enter Angle 1::-</label>
+                                </div>
+                                <div class="user-box">
+                                    <input type="number" name="" required="" id="n2p3">
+                                    <label style="width:350px;box-shadow: none;">Enter Angle 2::-</label>
+                                </div>
+                                <div class="user-box">
+                                    <input type="number" name="" required="" id="n3p3">
+                                    <label style="width:350px;box-shadow: none;">Enter Angle 3::-</label>
+                                </div>
+                                <a>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <input type="button" id="butr" value="SUBMIT" onclick="checkp3()"
+                                        style="font-size: 20px; background: none; border: none; color: red; font-weight: bold;">
+                                </a>
+                                <a>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <input type="button" id="butr" value="RESET" onclick="resetp3()"
+                                        style="font-size: 20px; background: none; border: none; color: red; font-weight: bold;">
+                                </a>
+                                <div class="user-box">
+                                    <input type="text" id="outp3" readonly>
+                                </div>
+                            </form>
+                            <!-- modal 3 -->
+                            <button class="primary" onclick="window.dialog3.showModal();">Click For Solution</button>
+                            <dialog id="dialog3">
+                                <img src="./tria ifsw2 ss.png" alt="" height="400px" width="600px">
+                                <button onclick="window.dialog3.close();" aria-label="close" class="x">❌</button>
+                            </dialog>
+                            <input type="button" Value="Click For Home" id="buttonh" onclick="submit()">
+                        </div>
+                    </div>
+                    <!-- tab 4 -->
+                    <div class="item" id="content-4">
+                        <h2 class="tab-title tab-warning">Profit And Loss</h2>
+                        <p stye="width:80%">
+                            <span class="numit">4</span>WAP to accept cost price and selling price of an item and determine the seller has made profit or insecure loss and also determine how much profit he made or loss he insecure.
+                        </p>
+                        <div class="login-box" style="margin-top: 300px;margin-left: 250px;">
+                            <h2>Profit And Loss</h2>
+                            <form>
+                                <div class="user-box">
+                                    <input type="number" name="" required="" id="n1p4">
+                                    <label style="width:350px;box-shadow: none;">Enter Cost Price::-</label>
+                                </div>
+                                <div class="user-box">
+                                    <input type="number" name="" required="" id="n2p4">
+                                    <label style="width:350px;box-shadow: none;">Enter Selling Price::-</label>
+                                </div>
+                                <a>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <input type="button" id="butr" value="SUBMIT" onclick="checkp4()"
+                                        style="font-size: 20px; background: none; border: none; color: red; font-weight: bold;">
+                                </a>
+                                <a>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <input type="button" id="butr" value="RESET" onclick="resetp4()"
+                                        style="font-size: 20px; background: none; border: none; color: red; font-weight: bold;">
+                                </a>
+                                <div class="user-box">
+                                    <input type="text" id="outp4" readonly>
+                                </div>
+
+                            </form>
+                            <!-- modal 4 -->
+                            <button class="primary" onclick="window.dialog4.showModal();">Click For Solution</button>
+                            <dialog id="dialog4">
+                                <img src="./pl ifsw2 ss.png" alt="" height="400px" width="800px">
+                                <button onclick="window.dialog4.close();" aria-label="close" class="x">❌</button>
+                            </dialog>
+                            <input type="button" Value="Click For Home" id="buttonh" onclick="submit()">
+                        </div>
+                    </div>
+
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

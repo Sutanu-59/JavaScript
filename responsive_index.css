@@ -1,0 +1,244 @@
+/* iphone SE */
+@media only screen and (min-width: 375px) and (max-width: 667px) {
+  .ban{
+    height:30vh !important;
+  }
+  .navi{
+    margin-left: -550px !important;
+  }
+  .navi1{
+    margin-left: -512px !important;
+  }
+  .navi2{
+    margin-left: -460px !important;
+  }
+  .dmenu1{
+    width:50% !important;
+    text-align: right !important;
+    /* border: 2px solid red !important; */
+  }
+  .dmenu {
+    /* border: 2px solid white !important;
+    width:50% !important; */
+    margin-left: 450px;
+  }
+  .search{
+    width: 350px;
+  }
+  .mid1 {
+    height: 160vh;
+  }
+  .butclick{
+    margin: 0px !important;
+    margin-left: 50px !important;
+    margin-top:10px !important;
+  }
+  .jsstep{
+    height: 40vh;
+  }
+  .tagl{
+    margin: 0px !important;
+    text-align: center;
+    font-size: 15.4px;
+  }
+
+}
+/* Galaxy S8+ */
+@media only screen and (min-width: 360px) and (max-width: 740px) {
+  .ban{
+    height:30vh !important;
+  }
+  .navi{
+    margin-left: -550px !important;
+  }
+  .navi1{
+    margin-left: -512px !important;
+  }
+  .navi2{
+    margin-left: -460px !important;
+  }
+  .dmenu1{
+    width:50% !important;
+    text-align: right !important;
+    /* border: 2px solid red !important; */
+  }
+  .dmenu {
+    /* border: 2px solid white !important;
+    width:50% !important; */
+    margin-left: 450px;
+  }
+  .search{
+    width: 350px;
+  }
+  .mid1 {
+    height: 145vh;
+  }
+  .mid1 h2{
+    font-size: 23px;
+  }
+  .butclick{
+    margin: 0px !important;
+    margin-left: 50px !important;
+    margin-top:10px !important;
+  }
+  .jsstep{
+    height: 30vh;
+  }
+  .tagl{
+    margin: 0px !important;
+    text-align: center;
+    font-size: 15.4px;
+  }
+}
+
+/* ipad mini */
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+  .ban{
+    height: 40vh !important;
+  }
+  .mid1{
+    height: 60vh !important;
+  }
+  .butclick{
+    margin: 0px !important;
+    margin-left: 50px !important;
+    margin-top:10px !important;
+  }
+  .jsstep{
+    height: 50vh;
+  }
+  #last {
+    height: 200vh !important;
+  }
+  .tagl{
+    margin: 200px !important;
+    text-align: center;
+    font-size: 15px;
+  }
+}
+/* ipad air */
+@media only screen and (min-width: 820px) and (max-width: 1180px){
+  .ban{
+    height: 40vh !important;
+  }
+  .mid1{
+    height: 50vh !important;
+  }
+  .butclick{
+    margin: 0px !important;
+    margin-left: 50px !important;
+    margin-top:10px !important;
+  }
+  .jsstep{
+    height: 40vh;
+  }
+  #last {
+    height: 180vh !important;
+  }
+  .tagl{
+    margin: 0px !important;
+    margin-left: 220px !important;
+  }
+}
+
+/* Galaxy Fold */
+@media only screen and (min-width: 280px) and (max-width: 653px){
+  .ban{
+    height:20vh !important;
+  }
+  .navi{
+    margin-left: -550px !important;
+  }
+  .navi1{
+    margin-left: -512px !important;
+  }
+  .navi2{
+    margin-left: -460px !important;
+  }
+  .dmenu1{
+    width:50% !important;
+    text-align: right !important;
+    /* border: 2px solid red !important; */
+  }
+  .dmenu {
+    /* border: 2px solid white !important;
+    width:50% !important; */
+    margin-left: 450px;
+  }
+  .search{
+    width: 350px;
+  }
+  .mid1 {
+    height: 210vh;
+  }
+  .mid1 h2{
+    font-size: 17px;
+  }
+  .butclick{
+    margin: 0px !important;
+    margin-left: 30px !important;
+    margin-top:10px !important;
+    font-size: 15px !important;
+  }
+  .jsstep{
+    height: 30vh;
+  }
+  .tagl{
+    margin: 0px !important;
+    text-align: center;
+    font-size: 15.4px;
+  }
+  #last {
+    height: 380vh !important;
+  }
+
+}
+
+/* galaxy A51/71 */
+@media only screen and (min-width: 360px) and (max-width: 740px) {
+  .ban{
+    height:30vh !important;
+  }
+  .navi{
+    margin-left: -550px !important;
+  }
+  .navi1{
+    margin-left: -512px !important;
+  }
+  .navi2{
+    margin-left: -460px !important;
+  }
+  .dmenu1{
+    width:50% !important;
+    text-align: right !important;
+    /* border: 2px solid red !important; */
+  }
+  .dmenu {
+    /* border: 2px solid white !important;
+    width:50% !important; */
+    margin-left: 450px;
+  }
+  .search{
+    width: 350px;
+  }
+  .mid1 {
+    height: 120vh;
+  }
+  .mid1 h2{
+    font-size: 23px;
+  }
+  .butclick{
+    margin: 0px !important;
+    margin-left: 50px !important;
+    margin-top:10px !important;
+  }
+  .jsstep{
+    height: 30vh;
+  }
+  .tagl{
+    margin: 0px !important;
+    margin-left: 100px;
+    text-align: center;
+    font-size: 15.4px;
+  }
+}

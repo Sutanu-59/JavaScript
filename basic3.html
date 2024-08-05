@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="basic1.css">
+    <script>
+        function calp1() {
+            var p = parseFloat(document.getElementById('pap1').value);
+            var r = parseFloat(document.getElementById('ratep1').value);
+            var t = parseFloat(document.getElementById('timep1').value);
+            var si = p * (1 + (r * t));
+            var ci = p * Math.pow((1 + r), t);
+            var dif = ci - si;
+            document.getElementById('outp1').value = "Difference of Simple and Compound Interest ::--" + dif;
+        }
+        function resetp1() {
+            document.getElementById('pap1').value = "";
+            document.getElementById('ratep1').value = "";
+            document.getElementById('timep1').value = "";
+            document.getElementById('outp1').value = "";
+        }
+        function calp2() {
+            var lp, pp, dl, dp;
+            lp = parseFloat(document.getElementById('lpp2').value);
+            pp = parseFloat(document.getElementById('ppp2').value);
+            dl = (lp * 15) / 100;
+            dp = (pp * 10) / 100;
+            document.getElementById('out1p2').value = "Discount for Laptop ::==" + dl;
+            document.getElementById('out2p2').value = "Discount for Printer ::==" + dp;
+        }
+        function resetp2() {
+            document.getElementById('lpp2').value = "";
+            document.getElementById('ppp2').value = "";
+            document.getElementById('out1p2').value = "";
+            document.getElementById('out2p2').value = "";
+        }
+        function calp3() {
+            var d, m, y;
+            d = parseInt(document.getElementById('dayp3').value);
+            y = parseInt(d / 365);
+            d = parseInt(d % 365);
+            m = parseInt(d / 12);
+            d = parseInt(d % 12);
+            document.getElementById('out1p3').value = "Day::=" + y;
+            document.getElementById('out2p3').value = "Month::=" + m;
+            document.getElementById('out3p3').value = "Year::=" + d;
+        }
+        function resetp3() {
+            document.getElementById('dayp3').value = "";
+            document.getElementById('out1p3').value = "";
+            document.getElementById('out2p3').value = "";
+            document.getElementById('out3p3').value = "";
+        }
+        function calp4()
+        {
+            var p=parseFloat(document.getElementById('pricep4').value);
+            var pa=(p-((p*10)/100))+((p*6)/100);
+            document.getElementById('outp4').value="The payable amount ::="+pa;
+        }
+        function resetp4()
+        {
+            document.getElementById('pricep4').value="";
+            document.getElementById('outp4').value="";
+        }
+        function submit(){
+            window.location = "index.html";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="wrapper pre">
+
+    </div>
+    <div class="wrapper">
+        <div class="title">
+            Basic Part 3
+            <div class="line"></div>
+        </div>
+        <div class="container">
+            <div class="card tabs">
+                <input id="tab-1" type="radio" class="tab tab-selector" checked="checked" name="tab" />
+                <label for="tab-1" class="tab tab-primary">S,C Interest</label>
+                <input id="tab-2" type="radio" class="tab tab-selector" name="tab" />
+                <label for="tab-2" class="tab tab-success">Computer</label>
+                <input id="tab-3" type="radio" class="tab tab-selector" name="tab" />
+                <label for="tab-3" class="tab tab-default">Days</label>
+                <input id="tab-4" type="radio" class="tab tab-selector" name="tab" />
+                <label for="tab-4" class="tab tab-warning">Camera</label>
+                <div class="tabsShadow"></div>
+                <div class="glider"></div>
+                <section class="content">
+                    <!-- tab1 -->
+                    <div class="item" id="content-1">
+                        <h2 class="tab-title tab-primary">Diff. Simple Interest & Compound Interest </h2>
+                        <p stye="width:80%">
+                            <span class="numit">1</span> WAP to find the difference between simple interest and compound
+                            interest when principle and time are given.
+                        </p>
+                        <div class="login-box" style="margin-top: 300px;margin-left: 250px;">
+                            <h2>Diff. Simple Interest & Compound Interest</h2>
+                            <form>
+                                <div class="user-box">
+                                    <input type="number" name="" required="" id="pap1">
+                                    <label style="width:350px;box-shadow: none;">Enter Principal Amount ::--</label>
+                                </div>
+                                <div class="user-box">
+                                    <input type="number" name="" required="" id="ratep1">
+                                    <label style="width:350px;box-shadow: none;">Enter Rate of Interest ::--</label>
+                                </div>
+                                <div class="user-box">
+                                    <input type="number" name="" required="" id="timep1">
+                                    <label style="width:350px;box-shadow: none;">Enter Time ::--</label>
+                                </div>
+                                <a>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <input type="button" id="butr" value="SUBMIT" onclick="calp1()"
+                                        style="font-size: 20px; background: none; border: none; color: red; font-weight: bold;">
+
+                                </a>
+                                <a>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <input type="button" id="butr" value="RESET" onclick="resetp1()"
+                                        style="font-size: 20px; background: none; border: none; color: red; font-weight: bold;">
+                                </a>
+                                <div class="user-box">
+                                    <input type="text" id="outp1" readonly>
+                                </div>
+                            </form>
+                            <!-- modal 1 -->
+                            <button class="primary" onclick="window.dialog1.showModal();">Click For Solution</button>
+                            <dialog id="dialog1">
+                                <img src="./diff s c i b3 ss.png" alt="" height="300px" width="600px">
+                                <button onclick="window.dialog1.close();" aria-label="close" class="x">❌</button>
+                            </dialog>
+                            <input type="button" Value="Click For Home" id="buttonh" onclick="submit()">
+                        </div>
+                    </div>
+                    <!-- tab 2 -->
+                    <div class="item" id="content-2">
+                        <h2 class="tab-title tab-success">Laptop and Printer</h2>
+                        <p stye="width:80%">
+                            <span class="numit">2</span>A computer manufacturing company announces a special offer to
+                            their customers on purchasing Laptops and the Printers accordingly:
+
+                            On Laptop: Discount-15%
+
+                            On Printers: Discount-10%
+
+                            WAP to calculate the discount, if customer purchases a Laptop and a printer.
+                        </p>
+                        <div class="login-box" style="margin-top: 300px;margin-left: 250px;">
+                            <h2>Laptop and Printer</h2>
+                            <form>
+                                <div class="user-box">
+                                    <input type="number" name="" required="" id="lpp2">
+                                    <label style="width:350px;box-shadow: none;">Enter price of Laptop ::-</label>
+                                </div>
+                                <div class="user-box">
+                                    <input type="number" name="" required="" id="ppp2">
+                                    <label style="width:350px;box-shadow: none;">Enter price of Printer ::-</label>
+                                </div>
+                                <a>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <input type="button" id="butr" value="SUBMIT" onclick="calp2()"
+                                        style="font-size: 20px; background: none; border: none; color: red; font-weight: bold;">
+
+                                </a>
+                                <a>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <input type="button" id="butr" value="RESET" onclick="resetp2()"
+                                        style="font-size: 20px; background: none; border: none; color: red; font-weight: bold;">
+                                </a>
+                                <div class="user-box">
+                                    <input type="text" id="out1p2" readonly>
+                                </div>
+                                <div class="user-box">
+                                    <input type="text" id="out2p2" readonly>
+                                </div>
+                            </form>
+                            <!-- modal 2 -->
+                            <button class="primary" onclick="window.dialog2.showModal();">Click For Solution</button>
+                            <dialog id="dialog2">
+                                <img src="./laptop printer b3 ss.png" alt="" height="300px" width="600px">
+                                <button onclick="window.dialog2.close();" aria-label="close" class="x">❌</button>
+                            </dialog>
+                            <input type="button" Value="Click For Home" id="buttonh" onclick="submit()">
+                        </div>
+                    </div>
+                    <!-- tab 3 -->
+                    <div class="item" id="content-3">
+                        <h2 class="tab-title tab-default">Days</h2>
+                        <p stye="width:80%">
+                            <span class="numit">3</span> WAP to accept the number of days and display the result
+                            converting into number of years, number of months and the remaining of days.
+                        </p>
+                        <div class="login-box" style="margin-top: 300px;margin-left: 250px;">
+                            <h2>Days</h2>
+                            <form>
+                                <div class="user-box">
+                                    <input type="number" name="" required="" id="dayp3">
+                                    <label style="width:350px;box-shadow: none;">Enter no. of days::-</label>
+                                </div>
+                                <a>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <input type="button" id="butr" value="SUBMIT" onclick="calp3()"
+                                        style="font-size: 20px; background: none; border: none; color: red; font-weight: bold;">
+                                </a>
+                                <a>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <input type="button" id="butr" value="RESET" onclick="resetp3()"
+                                        style="font-size: 20px; background: none; border: none; color: red; font-weight: bold;">
+                                </a>
+                                <div class="user-box">
+                                    <input type="text" id="out1p3" readonly>
+                                </div>
+                                <div class="user-box">
+                                    <input type="text" id="out2p3" readonly>
+                                </div>
+                                <div class="user-box">
+                                    <input type="text" id="out3p3" readonly>
+                                </div>
+                            </form>
+                            <!-- modal 3 -->
+                            <button class="primary" onclick="window.dialog3.showModal();">Click For Solution</button>
+                            <dialog id="dialog3">
+                                <img src="./day b3 ss.png" alt="" height="300px" width="600px">
+                                <button onclick="window.dialog3.close();" aria-label="close" class="x">❌</button>
+                            </dialog>
+                            <input type="button" Value="Click For Home" id="buttonh" onclick="submit()">
+                        </div>
+                    </div>
+                    <!-- tab 4 -->
+                    <div class="item" id="content-4">
+                        <h2 class="tab-title tab-warning">Simple Interest</h2>
+                        <p stye="width:80%">
+                            <span class="numit">4</span>A shopkeeper offer 10% discount on the printed price of a digital camera. However, a customer has to pay 6% sales tax on the remaining amount. Write a program to calculate the amount to be paid by the customer, taking printed price as input.
+                        </p>
+                        <div class="login-box" style="margin-top: 300px;margin-left: 250px;">
+                            <h2>Simple Interest</h2>
+                            <form>
+                                <div class="user-box">
+                                    <input type="number" name="" required="" id="pricep4">
+                                    <label style="width:350px;box-shadow: none;">Enter the price of camera ::-</label>
+                                </div>
+                                <a>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <input type="button" id="butr" value="SUBMIT" onclick="calp4()"
+                                        style="font-size: 20px; background: none; border: none; color: red; font-weight: bold;">
+                                </a>
+                                <a>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <input type="button" id="butr" value="RESET" onclick="resetp4()"
+                                        style="font-size: 20px; background: none; border: none; color: red; font-weight: bold;">
+                                </a>
+                                <div class="user-box">
+                                    <input type="text" id="outp4" readonly>
+                                </div>
+
+                            </form>
+                            <!-- modal 4 -->
+                            <button class="primary" onclick="window.dialog4.showModal();">Click For Solution</button>
+                            <dialog id="dialog4">
+                                <img src="./camera b3 ss.png" alt="" height="300px" width="600px">
+                                <button onclick="window.dialog4.close();" aria-label="close" class="x">❌</button>
+                            </dialog>
+                            <input type="button" Value="Click For Home" id="buttonh" onclick="submit()">
+                        </div>
+                    </div>
+
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

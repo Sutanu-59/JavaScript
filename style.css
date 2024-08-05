@@ -1,0 +1,396 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.navbar-nav li {
+    padding-left: 30px;
+}
+
+ul {
+    /* margin: 150px auto 0; */
+    padding: 0;
+    list-style: none;
+    display: table;
+    width: 600px;
+    text-align: center;
+}
+
+.nav-item li {
+    position: relative;
+    padding: 15px 0;
+}
+
+a {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+
+    display: inline-block;
+    /* padding: 15px 20px; */
+    position: relative;
+}
+
+a:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #fff;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+a:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+@media screen and (max-height: 300px) {
+    ul {
+        margin-top: 40px;
+    }
+}
+
+/* .carousel-inner {
+    height: 80vh;
+} */
+
+.mid1rap {
+    padding-top: 30px;
+    width: 80%;
+    margin: auto;
+}
+
+.mid1rap h2 {
+    text-align: center;
+    text-decoration: underline solid white;
+    transition: 0.5s ease-in;
+}
+
+.mid1rap h2:hover {
+    text-decoration: blue underline solid;
+}
+
+.mid1rap p {
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.mid2rap {
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 20px;
+}
+
+.jsstep {
+    background-image: url("./how-do-you-choose-a-javascript-course.jpg");
+    background-size: cover;
+    height: 140vh;
+    padding-left: 200px;
+}
+
+.steprap {
+    /* background-color: bisque; */
+    /* opacity:0.3; */
+    height: 100%;
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.col {
+    /* background-color: #3173fa; */
+    /* opacity:0.5; */
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-rows: auto auto auto auto auto auto auto;
+    padding-top: 50px;
+}
+
+.boxjs {
+    margin-left: 50px;
+    width: 100%;
+    height: 12vh;
+    /* background-color: red; */
+}
+
+/* last animation */
+main {
+    background: #111;
+    border: solid 1px #222;
+    padding: 2rem;
+    max-width: 100%;
+    width: 960px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+    max-height: 60vh;
+
+    >* {
+        grid-column: 1 / -1;
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+p {
+    line-height: 1.8;
+    margin: 1rem 0;
+    color: rgb(158, 166, 184);
+}
+
+h1 {
+    line-height: 1.3;
+    font-size: 5vw;
+    margin: 1rem 0;
+}
+
+h2 {
+    font-size: 4vw;
+    margin: 1rem 0;
+}
+
+h3 {
+    font-size: 2vw;
+    font-weight: bold;
+}
+
+h2.subheader {
+    font-size: 2vw;
+}
+
+section {
+    grid-column: auto;
+}
+
+header {
+    display: grid;
+    align-content: center;
+    grid-column: 1 / -1;
+}
+
+.callout {
+    text-align: center;
+    background-color: #3173fa;
+
+    >p {
+        color: white;
+    }
+
+    padding: 1vw 3vw;
+}
+
+/* ---------------------------------- */
+
+#last {
+    perspective: 1800px;
+    transform-style: preserve-3d;
+
+    animation: cinematic-camera 11s cubic-bezier(0.6, 0, 0.4, 1) both infinite;
+
+    @keyframes cinematic-camera {
+        from {
+            perspective-origin: 60% 40%;
+        }
+
+        to {
+            perspective-origin: 40% 60%;
+        }
+
+        /* 
+        Move the fading to the containing element as to not break inside 3D transforms. 
+        See: https://css-tricks.com/things-watch-working-css-3d/
+      */
+        from,
+        to {
+            opacity: 0;
+        }
+
+        25%,
+        75% {
+            opacity: 1;
+        }
+    }
+
+    &:after {
+        content: "";
+        /* background: linear-gradient(to bottom, #000, #0000 20%, #0000 80%, #000); */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+    }
+}
+
+main {
+    transform-origin: top center;
+    transform-style: preserve-3d;
+
+    animation: inherit;
+    animation-name: cinematic;
+}
+
+
+img {
+    display: block;
+    transform-style: preserve-3d;
+    animation: inherit;
+    animation-name: image-pop;
+}
+
+
+@keyframes image-pop {
+
+    70%,
+    100% {
+        transform: translate3d(0, 0, 60px);
+    }
+}
+
+&:last-of-type {
+    animation-delay: 4s;
+}
+
+
+@keyframes cinematic {
+    from {
+        transform: translateZ(-200px) rotateY(30deg) translateY(50vh);
+    }
+
+    to {
+        transform: translateZ(-100px) rotateY(-30deg) translateY(-100%) translateY(50vh);
+    }
+}
+
+/* footer */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+.footer {
+    position: relative;
+    width: 100%;
+    background: #3586ff;
+    min-height: 100px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .social-icon,
+  .menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+  }
+  
+  .social-icon__item,
+  .menu__item {
+    list-style: none;
+  }
+  
+  .social-icon__link {
+    font-size: 2rem;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+  }
+  .social-icon__link:hover {
+    transform: translateY(-10px);
+  }
+  
+  .menu__link {
+    font-size: 1.2rem;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+    text-decoration: none;
+    opacity: 0.75;
+    font-weight: 300;
+  }
+  
+  .menu__link:hover {
+    opacity: 1;
+  }
+  
+  .footer p {
+    color: #fff;
+    margin: 15px 0 10px 0;
+    font-size: 1rem;
+    font-weight: 300;
+  }
+  
+  .wave {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url("https://i.ibb.co/wQZVxxk/wave.png");
+    background-size: 1000px 100px;
+  }
+  
+  .wave#wave1 {
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+    animation: animateWaves 4s linear infinite;
+  }
+  
+  .wave#wave2 {
+    z-index: 999;
+    opacity: 0.5;
+    bottom: 10px;
+    animation: animate 4s linear infinite !important;
+  }
+  
+  .wave#wave3 {
+    z-index: 1000;
+    opacity: 0.2;
+    bottom: 15px;
+    animation: animateWaves 3s linear infinite;
+  }
+  
+  .wave#wave4 {
+    z-index: 999;
+    opacity: 0.7;
+    bottom: 20px;
+    animation: animate 3s linear infinite;
+  }
+  
+  @keyframes animateWaves {
+    0% {
+      background-position-x: 1000px;
+    }
+    100% {
+      background-positon-x: 0px;
+    }
+  }
+  
+  @keyframes animate {
+    0% {
+      background-position-x: -1000px;
+    }
+    100% {
+      background-positon-x: 0px;
+    }
+  }

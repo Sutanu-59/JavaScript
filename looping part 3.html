@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="basic1.css">
+    <script>
+        function calp1() {
+            var n = document.getElementById('nump1').value;
+            var a = 0, b = 1, s = 0;
+            document.getElementById('outp1').value=s;
+            s = a + b;
+            for ( i = 2; i <= n; i++)
+            {
+                document.getElementById('outp1').value=document.getElementById('outp1').value+" "+s
+                s = a + b;
+                a = b;
+                b = s;
+            }
+        }
+        function resetp1() {
+            document.getElementById('nump1').value = "";
+            document.getElementById('outp1').value = "";
+
+        }
+        function calp2() {
+            var n = document.getElementById('nump2').value;
+            var s = 0,i;
+            for (i = 1; i < n; i++)
+            {
+                if (n % i == 0)
+                    s = s + i;
+            }
+            if (s == n) {
+                document.getElementById('outp2').value = "Pefect Number";
+            }
+            else {
+                document.getElementById('outp2').value = "Not Pefect Number";
+            }
+        }
+        function resetp2() {
+            document.getElementById('nump2').value = "";
+            document.getElementById('outp2').value = "";
+
+        }
+        function calp3() {
+            var n = document.getElementById('nump3').value;
+            var f = 0, i;
+            for (i = 1; i <= n; i++) {
+                if (n % i == 0) {
+                    f++;
+                }
+            }
+            if (f == 2) {
+                document.getElementById('outp3').value = "Prime Number";
+            }
+            else {
+                document.getElementById('outp3').value = "Not Prime Number";
+            }
+        }
+        function resetp3() {
+            document.getElementById('nump3').value = "";
+            document.getElementById('outp3').value = "";
+
+        }
+        function calp4() {
+            var st = document.getElementById('stp4').value;
+            st = st.trim();
+            var l = st.length, n = 0, ca = 0, ce = 0, ci = 0, co = 0, cu = 0;
+            var ch, i;
+            for (i = 0; i < l; i++) {
+                ch = st.charAt(i);
+                if (ch == 'A' || ch == 'a')
+                    ca++;
+                else if (ch == 'E' || ch == 'e')
+                    ce++;
+                else if (ch == 'I' || ch == 'i')
+                    ci++;
+                else if (ch == 'O' || ch == 'o')
+                    co++;
+                else if (ch == 'U' || ch == 'u')
+                    cu++;
+            }
+            document.getElementById('outp4').value = "The number of 'A'::--" + ca + "\nThe number of 'E'::--" +
+            ce + "\nThe number of 'I'::--" + ci + "\nThe number of 'O'::--" + co + "\nThe number of 'U'::--" + cu;
+        }
+        function resetp4() {
+            document.getElementById('stp4').value = "";
+            document.getElementById('outp4').value = "";
+        }
+        function submit(){
+            window.location = "index.html";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="wrapper pre">
+
+    </div>
+    <div class="wrapper">
+        <div class="title">
+            Looping Part 3
+            <div class="line"></div>
+        </div>
+        <div class="container">
+            <div class="card tabs">
+                <input id="tab-1" type="radio" class="tab tab-selector" checked="checked" name="tab" />
+                <label for="tab-1" class="tab tab-primary">Fibonacci</label>
+                <input id="tab-2" type="radio" class="tab tab-selector" name="tab" />
+                <label for="tab-2" class="tab tab-success">Perfect</label>
+                <input id="tab-3" type="radio" class="tab tab-selector" name="tab" />
+                <label for="tab-3" class="tab tab-default">Prime</label>
+                <input id="tab-4" type="radio" class="tab tab-selector" name="tab" />
+                <label for="tab-4" class="tab tab-warning">Vow_count</label>
+                <div class="tabsShadow"></div>
+                <div class="glider"></div>
+                <section class="content">
+                    <!-- tab1 -->
+                    <div class="item" id="content-1">
+                        <h2 class="tab-title tab-primary">Fibonacci</h2>
+                        <p stye="width:80%">
+                            <span class="numit">1</span> WAP to display n numbers of Fibonacci series.
+
+                            Example:
+                            
+                            Input Number - 10
+                            
+                            Output:
+                            
+                            0
+                            
+                            1 1 2 3 5
+                            
+                            5
+                            
+                            8
+                        </p>
+                        <div class="login-box" style="margin-top: 350px;margin-left: 250px;">
+                            <h2>Fibonacci</h2>
+                            <form>
+                                <div class="user-box">
+                                    <input type="number" name="" required="" id="nump1">
+                                    <label style="width:350px;box-shadow: none;">Enter A Number ::-</label>
+                                </div>
+                                <a>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <input type="button" id="butr" value="SUBMIT" onclick="calp1()"
+                                        style="font-size: 20px; background: none; border: none; color: red; font-weight: bold;">
+
+                                </a>
+                                <a>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <input type="button" id="butr" value="RESET" onclick="resetp1()"
+                                        style="font-size: 20px; background: none; border: none; color: red; font-weight: bold;">
+                                </a>
+                                <div class="user-box">
+                                    <input type="text" id="outp1" readonly>
+                                </div>
+                            </form>
+                            <!-- modal 1 -->
+                            <button class="primary" onclick="window.dialog1.showModal();">Click For
+                                Solution</button>
+                            <dialog id="dialog1">
+                                <img src="./fibo loop3 ss.png" alt="" height="400px" width="600px">
+                                <button onclick="window.dialog1.close();" aria-label="close"
+                                    class="x">❌</button>
+                            </dialog>
+                            <input type="button" Value="Click For Home" id="buttonh" onclick="submit()">
+                        </div>
+                    </div>
+                    <!-- tab 2 -->
+                    <div class="item" id="content-2">
+                        <h2 class="tab-title tab-success">Perfect</h2>
+                        <p stye="width:80%">
+                            <span class="numit">2</span>WAP to accept any number and check the number is perfect or not
+
+                            Example:
+                            
+                            Input Number - 6
+                            
+                            Factors-1, 2, 3
+                            
+                            Sum = 1+2+3 = 6
+                            
+                            Input value & calculated value both are same, the 6 is a perfect number.
+                        </p>
+                        <div class="login-box" style="margin-top: 400px;margin-left: 250px;">
+                            <h2>Perfect</h2>
+                            <form>
+                                <div class="user-box">
+                                    <input type="number" name="" required="" id="nump2">
+                                    <label style="width:350px;box-shadow: none;">Enter A Number ::-</label>
+                                </div>
+                                <a>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <input type="button" id="butr" value="SUBMIT" onclick="calp2()"
+                                        style="font-size: 20px; background: none; border: none; color: red; font-weight: bold;">
+
+                                </a>
+                                <a>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <input type="button" id="butr" value="RESET" onclick="resetp2()"
+                                        style="font-size: 20px; background: none; border: none; color: red; font-weight: bold;">
+                                </a>
+                                <div class="user-box">
+                                    <input type="text" id="outp2" readonly>
+                                </div>
+                            </form>
+                            <!-- modal 2 -->
+                            <button class="primary" onclick="window.dialog2.showModal();">Click For
+                                Solution</button>
+                            <dialog id="dialog2">
+                                <img src="./perfect loop3 ss.png" alt="" height="500px" width="600px">
+                                <button onclick="window.dialog2.close();" aria-label="close"
+                                    class="x">❌</button>
+                            </dialog>
+                            <input type="button" Value="Click For Home" id="buttonh" onclick="submit()">
+                        </div>
+                    </div>
+                    <!-- tab 3 -->
+                    <div class="item" id="content-3">
+                        <h2 class="tab-title tab-default">Prime</h2>
+                        <p stye="width:80%">
+                            <span class="numit">3</span> WAP to accept any number and check the number is prime or not.
+                        </p>
+                        <div class="login-box" style="margin-top: 300px;margin-left: 250px;">
+                            <h2>Prime</h2>
+                            <form>
+                                <div class="user-box">
+                                    <input type="number" name="" required="" id="nump3">
+                                    <label style="width:350px;box-shadow: none;">Enter A Number ::-</label>
+                                </div>
+
+                                <a>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <input type="button" id="butr" value="SUBMIT" onclick="calp3()"
+                                        style="font-size: 20px; background: none; border: none; color: red; font-weight: bold;">
+
+                                </a>
+                                <a>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <input type="button" id="butr" value="RESET" onclick="resetp3()"
+                                        style="font-size: 20px; background: none; border: none; color: red; font-weight: bold;">
+                                </a>
+                                <div class="user-box">
+                                    <input type="text" id="outp3" readonly>
+                                </div>
+
+                            </form>
+                            <!-- modal 3 -->
+                            <button class="primary" onclick="window.dialog3.showModal();">Click For
+                                Solution</button>
+                            <dialog id="dialog3">
+                                <img src="./prime loop3 ss.png" alt="" height="500px" width="600px">
+                                <button onclick="window.dialog3.close();" aria-label="close"
+                                    class="x">❌</button>
+                            </dialog>
+                            <input type="button" Value="Click For Home" id="buttonh" onclick="submit()">
+                        </div>
+                    </div>
+                    <!-- tab 4 -->
+                    <div class="item" id="content-4">
+                        <h2 class="tab-title tab-warning">Vow_count</h2>
+                        <p stye="width:80%">
+                            <span class="numit">4</span> WAP to
+
+                            accept a line of text from the user and count the number of times each vowel appears in the text.
+
+                        </p>
+                        <div class="login-box" style="margin-top: 300px;margin-left: 250px;">
+                            <h2>Vow_count</h2>
+                            <form>
+                                <div class="user-box">
+                                    <input type="text" name="" required="" id="stp4">
+                                    <label style="width:350px;box-shadow: none;">Enter A String ::-</label>
+                                </div>
+
+                                <a>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <input type="button" id="butr" value="SUBMIT" onclick="calp4()"
+                                        style="font-size: 20px; background: none; border: none; color: red; font-weight: bold;">
+
+                                </a>
+                                <a>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <input type="button" id="butr" value="RESET" onclick="resetp4()"
+                                        style="font-size: 20px; background: none; border: none; color: red; font-weight: bold;">
+                                </a>
+                                <div class="user-box">
+                                    <input type="text" id="outp4" readonly>
+                                </div>
+
+                            </form>
+                            <!-- modal 4 -->
+                            <button class="primary" onclick="window.dialog4.showModal();">Click For
+                                Solution</button>
+                            <dialog id="dialog4">
+                                <img src="./vow loop3 ss.png" alt="" height="500px" width="800px">
+                                <button onclick="window.dialog4.close();" aria-label="close"
+                                    class="x">❌</button>
+                            </dialog>
+                            <input type="button" Value="Click For Home" id="buttonh" onclick="submit()">
+                        </div>
+                    </div>
+
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
